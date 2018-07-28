@@ -55,8 +55,8 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  font-family: 'Open Sans', helvetica, arial, sans;
   min-height: 100vh;
-  font-family: helvetica, arial, sans;
 }
 .content-container {
   display: flex;
@@ -86,6 +86,10 @@ h4 {
   color: #999;
   font-weight: bold;
   text-transform: uppercase;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Raleway', helvetica, sans;
+  font-weight: 100;
 }
 /* HEADER STYLES */
 .header {
@@ -125,10 +129,12 @@ h4 {
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   padding-left: 1em;
 }
-.header-nav a {
+.header-nav a,
+.drop-trigger {
   color: #fff;
 }
-.nav-links a {
+.nav-links a,
+.drop-trigger  {
   font-size: 0.8rem;
   font-weight: bold;
   text-decoration: none;
@@ -143,6 +149,43 @@ h4 {
 }
 .header-nav > li:first-child a:hover {
   color: #fff;
+}
+/* DROPDOWN STYLES */
+.dropdown {
+  position: relative;
+}
+.dropdown:hover .drop-menu {
+  display: block;
+}
+.drop-trigger {
+  display: inline-block;
+  padding-right: 1.5em;
+  position: relative;
+}
+.drop-trigger:after {
+  border: 0.3em solid;
+  border-color: #fff transparent transparent;
+  content: "";
+  height: 0;
+  position: absolute;
+  right: 0;
+  top: 0.3em;
+  width: 0;
+}
+.drop-menu {
+  display: none;
+  list-style: none;
+  padding: 1em 0 0;
+  position: absolute;
+  right: 0;
+  z-index: 9;
+}
+.drop-menu li {
+  background-color: #fff;
+}
+.drop-menu a {
+  color: #333;
+  display: block;
 }
 
 /* FOOTER STYLES */
@@ -270,21 +313,21 @@ h4 {
   text-align: center;
 }
 .social-link {
-  background: rgba(150, 150, 150, 0.5);
+  background: rgba(150,150,150,0.5);
   border-radius: 99px;
   box-sizing: border-box;
   color: #fff;
   display: inline-block;
   font-family: helvetica, arial, sans;
-  font-size: 1rem;
+  font-size: 1.7em;
   font-weight: bold;
-  height: 2.5em;
+  height: 1.5em;
   line-height: 1;
-  padding-top: 0.85em;
+  padding-top: 0.25em;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
-  width: 2.5em;
+  width: 1.5em;
 }
 .social-list > li {
   display: inline-block;
